@@ -5,3 +5,5 @@ const rstack = [];
 ak = "";
 
 console.log(lstack.pop())
+
+// /dev/stdin

@@ -1,4 +1,4 @@
 const input = require('fs').readFileSync('example.txt').toString().split(' ');
-const a = parseInt(input[0]);
-const b = parseInt(input[1]);
-console.log(a+b);
+const A = Number(input[0])
+const B = Number(input[1])
+console.log(A+B)
