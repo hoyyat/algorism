@@ -1,28 +1,32 @@
-const input = require('fs')
-  .readFileSync('dev/stdin')
-  .toString()
-  .trim()
-  .split('\n');
+const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
+
+let answer = "";
 
 for (let i = 0; i < input.length; i++) {
-  let text = input[i];
-  let count = 0;
-  let searchChar = '0'; // '0' = 배, '1' = 등
-  let pos = text.indexOf(searchChar);
+    let line = input[i].split(" ");
+    let cnt = 0;
+    
+    for (let j = 0; j < 4; j++){
+        
+        if (line[j] === "1") {
+            cnt++;
+        }
+    }
+    if (cnt === 0) {
+        answer += "D";
+    } else if (cnt === 3) {
+        answer += "A";
+    } else if (cnt === 2) {
+        answer += "B";
+    } else if (cnt === 1) {
+        answer += "C";
+    } else {
+        answer += "E";
+    }
 
-  while (pos !== -1) {
-    count++;
-    pos = text.indexOf(searchChar, pos + 1);
-  }
-  if (count === 0) { // // 배 0
-    console.log('E');
-  } else if (count === 1) { // 배 1
-    console.log('A');
-  } else if (count === 2) { // 배 2
-    console.log('B');
-  } else if (count === 3) { // 배 3
-    console.log('C');
-  } else if (count === 4) { // 배 4
-    console.log('D');
-  }
+    if(i!=input.length-1) {
+        answer += "\n";
+    } else {
+       console.log(answer); 
+    }
 }
