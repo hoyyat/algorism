@@ -1,26 +1,15 @@
-const input = require('fs').readFileSync('example.txt').toString().split('\n');
+const input = require("fs").readFileSync("example.txt").toString().trim().split("\n");
 
-console.log(input)
+const N = input[0] 
+const arrTime = input[1].split(" ")
+let YSFee = 0;
+let MSFee = 0;
 
-for (let i = 0; i < input.length; i++) {
-    let line = input[i].split(" ");
-    let cnt = 0;
-    
-    for (let j = 0; j < 4; j++){
-
-        if (line[j] === "1") {
-            cnt++;
-        }
-    }
-    if (cnt === 0) {
-        console.log("D")
-    } else if (cnt === 3) {
-        console.log("A")
-    } else if (cnt === 2) {
-        console.log("B")
-    } else if (cnt === 1) {
-        console.log("C")
-    } else {
-        console.log("E")
-    }
+for(let i = 0; i < N; i++) {
+    YSFee += 10 + (10 * parseInt(arrTime[i]/30))
+    MSFee += 15 + (15 * parseInt(arrTime[i]/60))
 }
+
+if(YSFee < MSFee) console.log("Y",YSFee)
+else if (YSFee === MSFee) console.log("Y M",YSFee)
+else console.log("M",MSFee)

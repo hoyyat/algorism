@@ -10,3 +10,5 @@ console.log(sum/input.length)
 input.sort()
 let A = Math.floor(input.length/2)
 console.log(input[A])
+
+//math.floor() 소수점 버리기
