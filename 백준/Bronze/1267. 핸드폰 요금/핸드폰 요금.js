@@ -7,16 +7,9 @@ let MSFee = 0;
 
 for(let i = 0; i < N; i++) {
     YSFee += 10 + (10 * parseInt(arrTime[i]/30))
-}
-
-for(let i = 0; i < N; i++) {
     MSFee += 15 + (15 * parseInt(arrTime[i]/60))
 }
 
-if(YSFee < MSFee) {
-    console.log("Y",YSFee)
-} else if (YSFee === MSFee) {
-    console.log("Y M",YSFee)
-} else {
-    console.log("M",MSFee)
-}
+if(YSFee < MSFee) console.log("Y",YSFee)
+else if (YSFee === MSFee) console.log("Y M",YSFee)
+else console.log("M",MSFee)

@@ -19,3 +19,5 @@ if (a <= b) {
 arr.sort((x,y) => x-y)
 console.log(arr.length)
 console.log(...arr)
+
+// 예외처리 : 1. a,b 가 같을때 2. a,b가 1차이 날떄 3. b가 a보다 클때

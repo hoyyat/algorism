@@ -1,15 +1,24 @@
 const input = require("fs").readFileSync("example.txt").toString().trim().split("\n");
 
-const N = input[0] 
-const arrTime = input[1].split(" ")
-let YSFee = 0;
-let MSFee = 0;
+const columnLength = input[0]
+const column = input[1].split(" ").map(v => +v).sort((a, b) => a - b)
+const sum = +input[2]
 
-for(let i = 0; i < N; i++) {
-    YSFee += 10 + (10 * parseInt(arrTime[i]/30))
-    MSFee += 15 + (15 * parseInt(arrTime[i]/60))
+let start = 0;
+let end = columnLength - 1
+let cnt = 0;
+
+
+while (start != end) {
+    if (column[start] + column[end] === sum) {
+        cnt++;
+        start++;
+    } else if (column[start] + column[end] > sum) {
+        end--;
+    } else {
+        start++;
+    }
 }
 
-if(YSFee < MSFee) console.log("Y",YSFee)
-else if (YSFee === MSFee) console.log("Y M",YSFee)
-else console.log("M",MSFee)
+
+console.log(cnt)

@@ -17,5 +17,5 @@ for (let i = 0; i < 9; i++) {
     }
 }
 
-
 console.log(input.filter(x => !arr1.includes(x)).join("\n"))
+// 교집합구하기 : arr.filter(x => !arr2.includes(x))
