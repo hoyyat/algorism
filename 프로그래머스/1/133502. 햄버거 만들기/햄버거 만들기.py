@@ -1,12 +1,12 @@
 def solution(ingredient):
     
-    s = []
+    order = ''.join(map(str ,ingredient))
     cnt = 0
-    for i in ingredient:
-        s.append(i)
-        if s[-4:] == [1, 2, 3, 1]:
+    while order:
+        if '1231' in order:
             cnt += 1
-            for _ in range(4):
-                s.pop()
-        
+            order = order.replace('1231', '', 1)
+        else:
+            break
+
     return cnt
