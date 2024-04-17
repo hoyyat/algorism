@@ -3,6 +3,7 @@ def solution(a, b):
     ab = int(str(a)+str(b))
     ba = int(str(b)+str(a))
     if ab < ba:
-        return ba
+        answer += str(ba)
     else:
-        return ab
+        answer += str(ab)
+    return  int(answer)
