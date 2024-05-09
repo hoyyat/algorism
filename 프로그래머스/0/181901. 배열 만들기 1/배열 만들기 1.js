@@ -1,4 +1,8 @@
 function solution(n, k) {
-    var answer = [];
+    let answer = []
+    c = parseInt(n/k)
+    for(let i = 1; i <= c; i++){
+        answer.push(k*i)
+    }
     return answer;
 }
