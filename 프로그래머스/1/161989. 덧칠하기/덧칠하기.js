@@ -6,9 +6,9 @@ function solution(n, m, section) {
         wall[section[i] - 1] = 0;
     }
     for (let i = 0; i < wall.length; i++) {
-        if (wall[i] === 0) {
+        if (!wall[i]) {
             cnt++;
-            wall.splice(i, m, ...Array(m).fill(1))
+            wall.fill(1, i, i + m)
         }
     }
     return cnt;
